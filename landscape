@@ -1,0 +1,63 @@
+from turtle import *
+import random 
+tom = Turtle ()
+
+tom.width(5)
+tom.speed(5)
+
+#background
+screen = Screen()           
+screen.bgcolor("skyblue")
+
+
+tom.pu()
+tom.goto(0,-200)
+tom.pd()
+
+tom.color("green")
+
+tom.begin_fill()
+tom.fd(500)
+tom.rt(90)
+tom.fd(100)
+tom.end_fill()
+
+tom.pu()
+tom.goto(0,-200)
+tom.pd()
+
+tom.rt(90)
+
+tom.fd(485)
+tom.bk(550)
+tom.rt(90)
+tom.color("brown")
+
+#Tree
+def tree(l,m):
+    tom.fd(l)
+    tom.bk(l)
+    tom.pu()
+    tom.rt(90)
+    tom.fd(m)
+    tom.lt(90)
+    tom.pd()
+
+tree(100,5)
+tree(35,8)
+tree(46,20)
+tree(100,20)
+tree(34,90)
+
+tree(100,5)
+tree(35,8)
+tree(46,20)
+tree(100,20)
+tree(34,90)
+
+tree(100,5)
+tree(35,8)
+tree(46,20)
+tree(100,20)
+tree(34,90)
+done()
