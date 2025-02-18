@@ -85,6 +85,8 @@ tom.fd(200)
 tom.pd()
 pix('skyblue')
 
+#------------------------------------------------------------------------------------------------------------------------
+
 #small heart
 
 #Outline
@@ -213,14 +215,109 @@ pix('skyblue')
 j(-179,200)
 pix('skyblue')
 
-#Big heart
-tom.pu()
-tom.goto(0,0)
-tom.pd()
+#------------------------------------------------------------------------------------------------------------------------
 
-heart(180,-90)
+#Red Spark
 
-tom.setheading(180)
+
+#pix('black')
+#j(-125+15,145-15)
+#pix('black')
+#j(-125+15+15,145-15-15)
+#pix('black')
+#tom.rt(270)
+#j(-125+15+15,145-15-15-15)
+#pix('black')
+#tom.fd(15)
+#pix('black')
+#j(-95,145-15-15-15-15-15-15)
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+def move_to(x, y):
+    tom.penup()
+    tom.goto(x, y)
+    tom.pendown()
+
+# Pixel function
+def pix(c):
+    tom.color(c)
+    tom.begin_fill()
+    for _ in range(4):
+        tom.fd(15)
+        tom.rt(90)
+    tom.end_fill()
+
+#Coordinate
+size = 15
+start_x, start_y = size * -9, size * 10 # Adjustable
+
+# Pixel pattern (1=black, 2=#F74254, 3=dark red #A10B1B)
+pattern = [
+    [0, 0, 1, 0, 0],
+    [0, 1, 2, 1, 0],
+    [1, 2, 1, 3, 1],
+    [0, 1, 3, 1, 0],
+    [0, 0, 1, 0, 0]
+]
+
+# Draw the pattern using the pix function
+for row in range(len(pattern)):
+    for col in range(len(pattern[row])):
+        color = None
+        if pattern[row][col] == 1:
+            color = "black"
+        elif pattern[row][col] == 2:
+            color = "#F74254"
+        elif pattern[row][col] == 3:
+            color = "#A10B1B"
+        
+        if color:
+            move_to(start_x + col * size, start_y - row * size) # type: ignore
+            pix(color)
+
+#------------------------------------------------------------------------------------------------------------------------
+
+#Coordinate
+size = 15
+start_x, start_y = size * 10, size * 5 # Adjustable
+
+# Pixel pattern (1=black, 2=#F74254, 3=dark red #A10B1B)
+pattern = [
+    [0, 0, 1, 0, 0],
+    [0, 1, 2, 1, 0],
+    [1, 2, 1, 3, 1],
+    [0, 1, 3, 1, 0],
+    [0, 0, 1, 0, 0]
+]
+
+# Draw the pattern using the pix function
+for row in range(len(pattern)):
+    for col in range(len(pattern[row])):
+        color = None
+        if pattern[row][col] == 1:
+            color = "black"
+        elif pattern[row][col] == 2:
+            color = "#F74254"
+        elif pattern[row][col] == 3:
+            color = "#A10B1B"
+        
+        if color:
+            move_to(start_x + col * size, start_y - row * size) # type: ignore
+            pix(color)
+
+#----------------------------------------------------------------------------------------------------------------------
+
+j(-25,100)
+
+#Black spark
+for count in range(4):
+    pix('black')
+    tom.rt(90)
+    tom.fd(15)
+tom.rt(90)
+pix('#F74254')
+
+
 
 #Black_heart_pixels
 
