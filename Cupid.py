@@ -249,7 +249,7 @@ def pix(c):
 
 #Coordinate
 size = 15
-start_x, start_y = size * -9, size * 10 # Adjustable
+start_x, start_y = size * -9, size * 11 # Adjustable
 
 # Pixel pattern (1=black, 2=#F74254, 3=dark red #A10B1B)
 pattern = [
@@ -279,7 +279,7 @@ for row in range(len(pattern)):
 
 #Coordinate
 size = 15
-start_x, start_y = size * 10, size * 5 # Adjustable
+start_x, start_y = size * 7, size * 8 # Adjustable
 
 # Pixel pattern (1=black, 2=#F74254, 3=dark red #A10B1B)
 pattern = [
@@ -307,37 +307,24 @@ for row in range(len(pattern)):
 
 #----------------------------------------------------------------------------------------------------------------------
 
-j(-25,100)
-
 #Black spark
-for count in range(4):
-    pix('black')
+def blkspark():
+    for count in range(4):
+        pix('black')
+        tom.rt(90)
+        tom.fd(15)
     tom.rt(90)
-    tom.fd(15)
-tom.rt(90)
-pix('#F74254')
+    pix('#F74254')
 
+j(-10,80)
+blkspark()
 
+j(300,160)
+blkspark()
 
-#Black_heart_pixels
+#---------------------------------------------------------------------------------------------------------------------
+#Big Heart
 
-#def bbox():   
-    #tom.width(3)
-    #tom.color("black")
-    #tom.begin_fill()   
-    #for count in range(4):
-        #tom.fd(5)
-        #tom.rt(90)
-    #tom.end_fill()
-
-#for count in range(4):
-    #for count in range(7):
-        #bbox()
-        #tom.lt(90)
-        #tom.fd(5)
-        #tom.lt(90)
-        #tom.fd(5)
-        #tom.setheading(0)
 
 tom.hideturtle()
 screen.tracer(True)
