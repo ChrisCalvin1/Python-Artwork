@@ -54,6 +54,7 @@ tom.pd()
 for count in range(4):
     pix('#4d89b6')
     tom.rt(90)
+    tom.fd(15)
 
 #line 2
 tom.pu()
@@ -85,6 +86,19 @@ tom.fd(200)
 tom.pd()
 pix('skyblue')
 
+j(-600,400)
+#Blue spark
+for count in range(4):
+    pix('#4d89b6')
+    tom.rt(90)
+    tom.fd(15)
+
+j(600,140)
+#Blue spark
+for count in range(4):
+    pix('#4d89b6')
+    tom.rt(90)
+    tom.fd(15)
 #------------------------------------------------------------------------------------------------------------------------
 
 #small heart
@@ -279,7 +293,38 @@ for row in range(len(pattern)):
 
 #Coordinate
 size = 15
-start_x, start_y = size * 7, size * 8 # Adjustable
+start_x, start_y = size * 7, size * 12 # Adjustable
+
+# Pixel pattern (1=black, 2=#F74254, 3=dark red #A10B1B)
+pattern = [
+    [0, 0, 1, 0, 0],
+    [0, 1, 2, 1, 0],
+    [1, 2, 1, 3, 1],
+    [0, 1, 3, 1, 0],
+    [0, 0, 1, 0, 0]
+]
+
+# Draw the pattern using the pix function
+for row in range(len(pattern)):
+    for col in range(len(pattern[row])):
+        color = None
+        if pattern[row][col] == 1:
+            color = "black"
+        elif pattern[row][col] == 2:
+            color = "#F74254"
+        elif pattern[row][col] == 3:
+            color = "#A10B1B"
+        
+        if color:
+            move_to(start_x + col * size, start_y - row * size) # type: ignore
+            pix(color)
+
+#----------------------------------------------------------------------------------------------------------------------
+
+
+#Coordinate
+size = 15
+start_x, start_y = size * -45, size * 10 # Adjustable
 
 # Pixel pattern (1=black, 2=#F74254, 3=dark red #A10B1B)
 pattern = [
@@ -316,16 +361,392 @@ def blkspark():
     tom.rt(90)
     pix('#F74254')
 
-j(-10,80)
+j(-350,90)
 blkspark()
 
 j(300,160)
 blkspark()
 
+j(500,10)
+blkspark()
+
 #---------------------------------------------------------------------------------------------------------------------
+
 #Big Heart
 
+j(15,0)
 
+pix('black')
+j(30,15)
+pix('black')
+j(45,30)
+pix('black')
+j(60,30)
+pix('black')
+j(75,30)
+pix('black')
+j(90,30)
+pix('black')
+j(105,30)
+pix('black')
+j(120,15)
+pix('black')
+j(135,15)
+pix('black')
+j(150,0)
+pix('black')
+j(150,-15)
+pix('black')
+j(150,-30)
+pix('black')
+j(150,-45)
+pix('black')
+j(150,-60)
+pix('black')
+j(150,-75)
+pix('black')
+j(150,-90)
+pix('black')
+j(135,-105)
+pix('black')
+j(135,-105-15)
+pix('black')
+j(135,-105-15-15)
+pix('black')
+j(135-15,-105-15-15)
+pix('black')
+j(120-15,-135-15)
+pix('black')
+j(120-15-15,-135-15-15)
+pix('black')
+j(120-15-15-15,-135-15-15-15)
+pix('black')
+j(120-15-15-15-15,-135-15-15-15-15)
+pix('black')
+j(120-15-15-15-15-15,-135-15-15-15-15-15)
+pix('black')
+j(120-15-15-15-15-15-15,-135-15-15-15-15-15-15)
+pix('black')
+j(120-15-15-15-15-15-15-15,-135-15-15-15-15-15-15-15)
+pix('black')
+j(120-15-15-15-15-15-15-15-15,-135-15-15-15-15-15-15-15-15)
+pix('black')
+j(0,-255)
+pix('black')
+
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+j(-15,0)  # Mirror along y-axis (negate x-coordinate)
+pix('black')
+j(-30,15)
+pix('black')
+j(-45,30)
+pix('black')
+j(-60,30)
+pix('black')
+j(-75,30)
+pix('black')
+j(-90,30)
+pix('black')
+j(-105,30)
+pix('black')
+j(-120,15)
+pix('black')
+j(-135,15)
+pix('black')
+j(-150,0)
+pix('black')
+j(-150,-15)
+pix('black')
+j(-150,-30)
+pix('black')
+j(-150,-45)
+pix('black')
+j(-150,-60)
+pix('black')
+j(-150,-75)
+pix('black')
+j(-150,-90)
+pix('black')
+j(-135,-105)
+pix('black')
+j(-135,-105-15)
+pix('black')
+j(-135,-105-15-15)
+pix('black')
+j(-135+15,-105-15-15)  # Adjusted mirrored position
+pix('black')
+j(-120+15,-135-15)
+pix('black')
+j(-120+15+15,-135-15-15)
+pix('black')
+j(-120+15+15+15,-135-15-15-15)
+pix('black')
+j(-120+15+15+15+15,-135-15-15-15-15)
+pix('black')
+j(-120+15+15+15+15+15,-135-15-15-15-15-15)
+pix('black')
+j(-120+15+15+15+15+15+15,-135-15-15-15-15-15-15)
+pix('black')
+j(-120+15+15+15+15+15+15+15,-135-15-15-15-15-15-15-15)
+pix('black')
+j(-120+15+15+15+15+15+15+15+15,-135-15-15-15-15-15-15-15-15)
+pix('black')
+
+j(0,-15)
+pix('black')
+
+#Fill
+
+tom.color('#F74254')
+tom.begin_fill()
+
+tom.fd(15)
+for count in range(3):
+    tom.rt(90)
+    tom.fd(15)
+    tom.lt(90)
+    tom.fd(15)
+tom.fd(15+15+15+15)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(30)
+tom.lt(90)
+tom.fd(15*7)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(30)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(15)
+for count in range(7):
+    tom.lt(90)
+    tom.fd(15)
+    tom.rt(90)
+    tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Fill
+j(-15,-15)
+tom.color('#F74254')
+tom.fd(15)
+for count in range(3):
+    tom.lt(90)
+    tom.fd(15)
+    tom.rt(90)
+    tom.fd(15)
+tom.fd(15+15+15+15)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(30)
+tom.rt(90)
+tom.fd(15*7)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(30)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+for count in range(7):
+    tom.rt(90)
+    tom.fd(15)
+    tom.lt(90)
+    tom.fd(15)
+tom.rt(90)
+tom.fd(15)
+
+tom.end_fill()
+
+tom.color('#F74254')
+tom.rt(180)
+tom.fd(15/2)
+tom.lt(90)
+tom.width(20)
+tom.pu()
+tom.fd(5)
+tom.pd()
+tom.fd(250-25)
+
+tom.width(0)
+j(-15,-15)
+pix('black')
+
+j(-15,-255)
+pix('black')
+
+j(-30,-255+15)
+pix('black')
+
+j(0,-255+15)
+pix('black')
+
+#detail
+
+j(-15,-255+15)
+tom.color('#a50b18')
+tom.begin_fill()
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(30)
+for count in range(7):
+    tom.lt(90)
+    tom.fd(15)
+    tom.rt(90)
+    tom.fd(15)
+    
+tom.lt(90)
+tom.fd(30)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15*6)
+tom.rt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(15*7)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(30)
+for count in range(8):
+    tom.rt(90)
+    tom.fd(15)
+    tom.lt(90)
+    tom.fd(15)
+tom.rt(90)
+tom.fd(15)
+
+tom.end_fill()
+
+
+tom.color('#D61A26')
+tom.begin_fill()
+j(-60+15,-195-15)
+tom.rt(180)
+tom.fd(45)
+for count in range(7):
+    tom.lt(90)
+    tom.fd(15)
+    tom.rt(90)
+    tom.fd(15)
+tom.lt(90)
+tom.fd(30)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15*6)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(15*6)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(30)
+for count in range(5):
+    tom.rt(90)
+    tom.fd(15)
+    tom.lt(90)
+    tom.fd(15)
+
+tom.rt(90)
+tom.fd(45+15)
+for count in range(5):
+    tom.rt(90)
+    tom.fd(15)
+    tom.lt(90)
+    tom.fd(15)
+tom.rt(90)
+tom.fd(45)
+for count in range(2):
+    tom.fd(15)
+    tom.lt(90)
+    tom.fd(15)
+    tom.rt(90)
+
+tom.lt(180)
+tom.fd(15*4)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(30)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(15)
+
+for count in range(5):
+    tom.lt(90)
+    tom.fd(15)
+    tom.rt(90)
+    tom.fd(15)
+
+tom.end_fill()
+
+tom.color('#D61A26')
+
+tom.begin_fill()
+j(0-15-15-15-15-15,30)
+tom.fd(15)
+for count in range(2):
+    tom.lt(90)
+    tom.fd(15)
+    tom.rt(90)
+    tom.fd(15)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+for count in range(2):
+    tom.fd(15)
+    tom.lt(90)
+    tom.fd(15)
+    tom.rt(90)
+
+tom.lt(180)
+tom.fd(15)
+tom.lt(90)
+tom.fd(15)
+tom.rt(90)
+tom.fd(15)
+for count in range(3):
+    tom.rt(90)
+    tom.fd(15)
+    tom.lt(90)
+    tom.fd(15)
+tom.fd(15)
+tom.end_fill()
+
+j(0-15-15-15-15-15,30-15-15)
+pix('#FFE1E6')
+j(-15*5,0)
 tom.hideturtle()
 screen.tracer(True)
 done()
